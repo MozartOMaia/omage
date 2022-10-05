@@ -17,12 +17,12 @@
   <body>
     
     <h1>Bem vindo ao Mural:</h1>
-    {% if cards_list %}
-    <ul>
-        {% for card in cards_list %}
+    
+<!--     
+       
         
-        <li>
-            <div class="card" style="width: 30%; display: inline-block;">
+       
+            <div class="card" >
                 <img class="card-img-top" src="{% static card.image %}" alt="Card image cap">
                 <div class="card-body">
                 
@@ -36,13 +36,31 @@
                   <a href="#" class="card-link">Card link</a>
                   <a href="#" class="card-link">Another link</a>
                 </div>
+              </div> -->
+
+        {% if cards_list %}
+            <div class="card-group" style="display: inline; width: 100%;">
+              {% for card in cards_list %}
+              <div class="card" style="width: 300px; display: inline-block; height: 300px;">
+                <img class="card-img-top" src="{% static card.image %}" alt="Card image cap" style="width: 300px;">
+                <div class="card-body">
+                  <h5 class="card-title">Por :{{ card.assinatura }}</h5>
+                  <p class="card-text">{{ card.texto }}</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Publicado em: {{ card.pub_date }}</small>
+                </div>
               </div>
-        </li>
-        {% endfor %}
-    </ul>
+            </div>
+       
+              {% endfor %}
+   
     {% else %}
     <p>Nenhum card ainda cadastrado.</p>
     {% endif %}
+
+
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
