@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 #Path to img files saved
+#MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'omage\static')
 # Application definition
 

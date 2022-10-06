@@ -16,7 +16,7 @@
   </head>
   <body>
     
-    <h1>Bem vindo ao Mural:</h1>
+    <h1 style="text-align: center;">Bem vindo ao Mural:</h1>
     
 <!--     
        
@@ -58,6 +58,10 @@
     {% else %}
     <p>Nenhum card ainda cadastrado.</p>
     {% endif %}
+
+    <hr>
+
+    <h3><a href="{% url 'omage:cadastrar_card' %}">Clique aqui para cadastrar um card</a> </h3>
 
 
     
