@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     {% load static %}
 
-    <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
     <title>Omage App</title>
   </head>
   <body>
     
-    <h1 style="text-align: center;">Bem vindo ao Mural:</h1>
+    <h1 style="text-align: center; color: rgb(211, 238, 229);">Bem vindo ao Mural:</h1>
     
 <!--     
        
@@ -39,16 +40,16 @@
               </div> -->
 
         {% if cards_list %}
-            <div class="card-group" style="display: inline; width: 100%;">
+            <div class="card-group">
               {% for card in cards_list %}
-              <div class="card" style="width: 300px; display: inline-block; height: 300px;">
-                <img class="card-img-top" src="{% static card.image %}" alt="Card image cap" style="width: 300px;">
+              <div class="card" id="gradient-border">
+                <img class="card-img-top" src="{% static card.image %}" alt="Card image cap">
                 <div class="card-body">
-                  <h5 class="card-title">Por :{{ card.assinatura }}</h5>
-                  <p class="card-text">{{ card.texto }}</p>
+                  <h5 class="card-title">{{ card.texto }}</h5>
+                  <p class="card-text">Por: {{ card.assinatura }}</p>
                 </div>
-                <div class="card-footer">
-                  <small class="text-muted">Publicado em: {{ card.pub_date }}</small>
+                <div class="card-footer" >
+                  <small class="text-muted" style="height: 15px;">Publicado em: {{ card.pub_date }}</small>
                 </div>
               </div>
             </div>

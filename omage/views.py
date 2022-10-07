@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import Card
 from django.views import generic
 from django.utils import timezone
+from django.urls import reverse
 
 from .models import Card
 
@@ -30,4 +31,5 @@ def cadastrar_card(request):
         novo_card.save()
         lista_cards = Card.objects.all()
         context = {'cards_list': lista_cards}
-        return render(request, 'omage/index.html', context)
+        return HttpResponseRedirect(reverse('omage:index')) #render(request, 'omage/index.html', context)
+        
